@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskItem from './taskItem'
+import TaskItem from './taskItem';
 
 function TaskItems(props) {
   return (
@@ -8,6 +8,7 @@ function TaskItems(props) {
         <TaskItem
           key={index}
           taskText={task}
+          handleDelete={props.handleDelete}
         />
       ))}
     </div>

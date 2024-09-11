@@ -34,6 +34,12 @@ export default class Body extends React.Component {
     }));
   };
 
+  handleDeleteAllChecked = () => {
+    this.setState((prevState) => ({
+      tasks: prevState.tasks.filter((task) => !task.checked),
+    }));
+  }
+
   handleToggle = (index) => {
     this.setState((prevState) => {
       const updatedTasks = prevState.tasks.map((task, i) => {
@@ -72,8 +78,9 @@ export default class Body extends React.Component {
         <div className="tasks--container">
           <TaskItems
             tasks={this.state.tasks}
-            handleDelete={this.handleDelete}
             handleToggle={this.handleToggle}
+            handleDelete={this.handleDelete}
+            handleDeleteAllChecked={this.handleDeleteAllChecked}
           />
         </div>
       </div>

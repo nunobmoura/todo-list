@@ -7,8 +7,11 @@ function TaskItems(props) {
       {props.tasks.map((task, index) => (
         <TaskItem
           key={index}
-          taskText={task}
-          handleDelete={props.handleDelete}
+          id={index}
+          taskText={task.text}
+          checked={task.checked}
+          onToggle={() => props.handleToggle(index)}
+          onDelete={() => props.handleDelete(task.text)}
         />
       ))}
     </div>
